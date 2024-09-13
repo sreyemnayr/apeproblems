@@ -1,0 +1,26 @@
+name: deps
+
+dependencies:
+  - name: OpenZeppelin
+    github: OpenZeppelin/openzeppelin-contracts
+    version: 4.8.3
+    contracts_folder: contracts
+  - name: OpenZeppelin
+    github: OpenZeppelin/openzeppelin-contracts
+    version: 4.9.2
+    contracts_folder: contracts
+
+solidity:
+  via_ir: True
+  version: 0.8.23
+  import_remapping:
+    - "@openzeppelin/v4.9.2=OpenZeppelin/v4.9.2"
+    - "@openzeppelin/v4.8.3=OpenZeppelin/v4.8.3"
+
+compiler:
+  ignore_files:
+    - "*package.json"
+    - "*package-lock.json"
+    - "*tsconfig.json"
+    - "interfaces/*"
+    - "lib/*"
